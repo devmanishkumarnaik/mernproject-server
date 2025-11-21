@@ -18,8 +18,8 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
-const ADMIN_USER = process.env.ADMIN_USER || "admin";
-const ADMIN_PASS = process.env.ADMIN_PASS || "admin";
+const ADMIN_USER = process.env.ADMIN_USER;
+const ADMIN_PASS = process.env.ADMIN_PASS;
 
 function isAuthorized(req) {
   const h = req.headers["authorization"] || "";
